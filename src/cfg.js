@@ -24,7 +24,8 @@ const configFilesToSearch = [
 
 let configFileToLoad;
 
-const requestedConfigFile = cliOpts.config || cliOpts.c; // CLI option --config/-c
+// const requestedConfigFile = cliOpts.config || cliOpts.c; // CLI option --config/-c
+const requestedConfigFile = "/config/config.ini";
 if (requestedConfigFile) {
   try {
     // Config files specified with --config/-c are loaded from cwd
@@ -143,7 +144,8 @@ if (! config.dbType) {
 
 if (! config.sqliteOptions) {
   config.sqliteOptions = {
-    filename: path.resolve(__dirname, "..", "db", "data.sqlite"),
+    // filename: path.resolve(__dirname, "..", "db", "data.sqlite"),
+    filename: "/config/data.sqlite",
   };
 }
 
